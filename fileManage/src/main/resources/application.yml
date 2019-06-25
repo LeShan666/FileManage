@@ -1,0 +1,17 @@
+server:
+  port: 9000
+spring:
+  jpa:
+    show-sql: true
+    database: mysql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/fileManage?fileManage=true&characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: admin
+
+  thymeleaf:
+    cache=false:

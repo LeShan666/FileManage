@@ -1,0 +1,105 @@
+body,ul,li,span{margin: 0;padding: 0;font-family:'Microsoft Yahei';}
+ul{list-style: none;}
+a{text-decoration: none;}
+.container{width:100%;}
+.header_icon{
+	width: 100%;
+	background-color: rgb(67,142,185);
+	height: 80px;
+}
+.sider_icon{
+	float: left;
+	width: 15%;
+	height:650px;
+	background-color: rgb(242,242,242);
+	
+}
+.right_header{float: right;width: 100%;height: 40px;background-color: rgb(245,245,245);
+	border-bottom: solid 1px rgb(229,229,229);}
+.right_icon{width: 100%;height: 100%;}
+.right{
+	float: right;
+	width:85%;
+	height: 650px;
+	padding: 0;
+	margin: 0;
+	border-bottom: solid 1px rgb(229,229,229);
+	/*border-right: solid 1px rgb(221,221,221);*/
+}
+.div_lineline{position: absolute;width: 1px;height: 600px;margin-top: 1px;border-left: solid 1px rgb(229,229,229);}
+.right_header_info{width: 100px;height: 40px;line-height: 40px;margin-left: 20px;font-size: 14px;color: #666;}
+/*头部标签样式设置*/
+.header_nav{background-color: yellow;width: 450px;height: 50px;float: right;margin-right: 20px;
+			margin-top: 15px;cursor: pointer;}
+.header_nav li{float: left;}
+
+.header_nav_inform{width:50px;height: 50px;background-color: rgb(137,46,101);line-height: 50px;
+			text-align: center;color: #fff;}
+#bell{position: absolute;line-height: 50px;margin-left: -18px;}
+#header_nav_infor_span{position: absolute;width: 20px;height: 20px;line-height: 20px;border-radius: 50%;
+		background: #D15B47;margin-top: 14px;}
+.header_nav_time{width: 300px ;height: 50px;background-color: rgb(98,168,209);border-left: solid 1px #fff;
+		border-right: solid 1px #fff;text-align: center;line-height: 50px;color:#fff;font-size: 14px}
+.header_nav_welcome{width: 98px;height: 50px;background-color: rgb(98,168,209); text-align: center;
+		line-height: 50px;font-size: 14px;color:#fff}
+/*左侧标签样式设置*/
+.sider_bar{width:100%;height:50px;background-color: rgb(98,168,209);text-align: center;
+		line-height: 50px;color:#fff;font-size: 14px;cursor: pointer;}
+.sider_list1,.sider_list2,.sider_list3,.sider_header{width:100%;height:50px;background-color: rgb(245,245,245);text-align: center;
+		line-height: 50px;color:#666;font-size: 14px;
+		border-bottom: solid 1px rgb(229,229,229);cursor: pointer;}
+.sider_list4{width: 100%;height:50px;background-color: rgb(249,249,249);
+		border-bottom: solid 1px rgb(229,229,229);}
+.sider_header_icon{float: right; width: 40px;height: 40px;margin-top: 5px;text-align: center;
+		line-height: 40px;position: absolute;}
+.sider_list_span1,.sider_list_span2,.sider_list_span3,.sider_list_span4,.sider_list_span5{float:left; width: 3px;height: 40px;background-color:rgb(245,245,245);}
+.sider_header:hover{
+	background-color: rgb(250,250,250);
+	color:rgb(25,99,170);}
+
+/* 登录界面样式 */
+.login_form{width:368px;height:378px;background:rgba(255,192,203,0.6);
+		margin:150px auto;}
+.login_title{height:60px;width:308px;margin:10px auto;border-bottom:1px solid #e0e0e0;}
+
+.login_title h1{font-size:24px;height:60px;line-height:60px;color:#666;float:left;font-weight:bold;margin-left:44px;}
+.login_title a{width:130px;height:20px;display:block;font-size:16px;/*color:#5fb42a;*/color: white;
+			text-indent:26px;background:url(../img/go_03.png) 91px 5px no-repeat;float:left;margin:20px 0 0 36px}
+.form_input{width:308px;height:250px;margin:20px auto;position:relative;}
+.name_input,.pwd_input{width:306px;height:36px;border:1px solid #e0e0e0;cursor:pointer;
+		background:url(../img/icons02.png) 280px -41px no-repeat rgba(248,248,248,0.7);
+		outline:none;font-size:14px;text-indent:10px;position: absolute;left:0;top:0}
+.pwd_input{top:65px;background-position:280px -95px;}
+.user_error,.pwd_error{color:#f00;position:absolute;left:0;top:43px;display:none}
+.pwd_error{top:110px;}
+.more_input{position:absolute;margin-top: 130px;width: 100%;}
+.more_input input{float:left;margin-top:2px;cursor:pointer;}
+.more_input label{float:left;margin-left:10px;color: #666;cursor:pointer;}
+.more_input a{float:right;color:#666}
+.more_input a:hover{color:#ff8800}
+.input_submit{margin-top: 170px;height: 40px;width: 306px;font-family:'Microsoft Yahei';cursor:pointer;
+			background-color: rgb(216,191,216,0.7);border: 0;}
+
+/**
+ * 设置导航条的样式
+ */
+.menu{width:100%;}
+.menu .level1,.menu li ul a{display:block;width:100%;height:40px;line-height:40px;
+		text-decoration:none;background-color:rgb(245,245,245);color:#666;font-size:16px;text-indent:50px;			}
+.menu .level1{border-bottom:1px solid rgb(229,229,229);	}
+.menu li ul a{font-size:14px;text-indent:50px;background-color:rgb(245,245,245);}
+.menu li ul li{border-bottom:1px dashed rgb(228,228,228);}	
+.menu li ul{display:none;}
+.menu li ul.current{display:block;}
+.menu li ul li a:hover{background-color: white;color: rgb(25,99,170);}
+#menu_header{color:rgb(45,128,188);font-weight: bold;}
+#menu_icon{color:white;background-color: rgb(98,168,209);}
+#left_i{position:absolute;margin-top: 12px;margin-left: 25px;}
+#right_i{float: right;margin-top: 12px;margin-right: 20px;}
+#header_i{float: right;height: 30px;color: rgb(43,125,188);margin-right: -1px;}
+.left_i_color{color:rgb(43,125,188) ;}
+ /*设置子标签的样式*/
+.li_div{position: absolute;width: 8px;height: 40px;/*background-color: yellow;*/
+		margin-left: 27px;	border-right: dashed 1px rgb(220,220,220);}
+.li_div_line{position: absolute;width:10px;height: 10px;/*background-color: yellow;*/margin-top: 20px;
+		margin-left: 36px;border-top: dashed 1px rgb(220,220,220);}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				function currentTime(){
+					var myDate = new Date();
+					var time = document.getElementById("time");
+					var str='';
+					str=myDate.getFullYear()+'年'+(myDate.getMonth()+1)+'月'+myDate.getDate()+'日'
+					+myDate.getHours()+'时'+myDate.getMinutes()+'分'+myDate.getSeconds()+'秒';
+					time.innerHTML=str;
+				}
+				setInterval(currentTime,1000);
+			}
+		</script>
+		<style type="text/css">
+			.bell_div{overflow:hidden;position: absolute;width: 240px;height: 210px;background: white;
+			border: 1px solid rgb(229,188,212); margin-top: 65px;margin-left: 880px; display: none;}
+			.bell_bar{width: 100%;height:48px;}
+			.bell_div .bell_bar div{width: 220px;height: 47px;line-height: 47px;margin:0 auto;
+				font-size: 13px;	border-bottom:1px solid  rgb(229,188,212);}
+			.inform{width: 230px;height: 30px;line-height: 30px;padding-left: 10px;
+					border-bottom: 1px solid  rgb(229,188,212);	font-size: 13px;	
+					background: rgb(247,236,242);color: rgb(180,113,160);font-weight: bold;}
+			.bell_div .bell_bar div i{padding: 10px;background: rgb(214,72,146); color: white;}
+			#bell_span1,#bell_span2,#bell_span3{width: 40px;height: 20px;background:rgb(214,72,146);position: absolute;line-height: 20px;
+					margin-left: 100px;margin-top: 10px;border-radius: 10px;text-align: center;}
+			#bell_span2{background: rgb(66,139,202);}
+			#bell_span3{background:  rgb(111,179,224);}
+			.bell_div .bell_bar .allOrder{text-align: center;height: 35px;line-height: 35px;}
+			
+			
+			.bell_login{position: absolute;width:120px;height: 90px;margin-left: 1200px;margin-top: 65px;background: white;
+					border:1px solid rgb(217,217,217)}
+			.bell_login li{width: 100%;height: 30px;line-height: 30px;font-size: 13px;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="bell_div">
+				<div class="inform" ><i class="fa fa-exclamation" id="inform" aria-hidden="true"></i>&nbsp;&nbsp;<span>8</span>条通知</div>
+				<div class="bell_bar" onmouseover="this.style.backgroundColor='rgb(252,244,249)'" onmouseout="this.style.backgroundColor='white'">
+					<div class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;评论 
+				
+					<span id="bell_span1">
+						+12
+					</span>
+				</div>
+				</div>
+				<div class="bell_bar" onmouseover="this.style.backgroundColor='rgb(252,244,249)'" onmouseout="this.style.backgroundColor='white'">
+					<div class="newOrder"><i style="background: rgb(66,139,202);" class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;订单
+						<span id="bell_span2">
+							+12
+						</span>
+					</div>
+				</div>
+				
+				<div class="bell_bar" onmouseover="this.style.backgroundColor='rgb(252,244,249)'" onmouseout="this.style.backgroundColor='white'">
+					<div class="fans"><i style="background: rgb(111,179,224);" class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;粉丝
+						<span id="bell_span3">
+							+12
+						</span>
+					</div>
+				</div>
+				<div class="bell_bar" onmouseover="this.style.backgroundColor='rgb(252,244,249)'" onmouseout="this.style.backgroundColor='white'">
+					<div class="bell_bar">
+					<div class="allOrder"><a href="AcceptShopping.html" target="iframe">查看所有订单</a></div>
+				</div>
+				</div>
+				
+				
+			</div>
+			
+			
+			
+			
+			
+			<div class="bell_login" style="display: none;">
+				<ul>
+					<li >&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;<a href="#">设置</a></li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<a href="userInfo.html" target="iframe">个人资料</a></li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-power-off" aria-hidden="true"></i>&nbsp;&nbsp;<a href="login.html" >退出</a></li>
+				</ul>
+			</div>
+			
+			<div class="header_icon">
+				<div class="header_title" style="height: 80px;width: 800px;float: left;font-size: 38px;color:white;font-weight: bold;line-height: 80px;margin-left: 50px;">
+					后台文件管理系统
+				</div>
+				<!--头部消息通知-->
+				<ul class="header_nav">
+					<li>
+						<div class="header_nav_inform" >
+							<i class="fa fa-bell" aria-hidden="true" id="bell"></i>
+							<span id="header_nav_infor_span">
+								8
+							</span>
+						</div>
+					</li>
+					<li>
+						<div class="header_nav_time" id="time">
+						</div>
+					</li>
+					<li>
+						<div class="header_nav_welcome">
+							欢迎光临
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--导航测div-->
+			<div class="sider_icon">
+				
+				<ul class="menu">
+					<li>
+						<a id="menu_icon" href="#" class="level1">后台文件管理系统</a>
+					</li>
+					<li>
+						<i class="fa fa-tachometer left_i_color" aria-hidden="true" id="left_i"></i>
+						<i class="fa fa-caret-left fa-3x" aria-hidden="true" id="header_i"></i>
+						<a id="menu_header" href="allFileList.html" class="level1" target="iframe">系统首页</a>
+						
+					</li>
+					<li>
+						<span class="sider_list_span1"></span>
+						<i class="fa fa-television" aria-hidden="true" id="left_i"></i>
+						<i class="fa fa-angle-down" aria-hidden="true" id="right_i"></i>
+						<a href="#"  class="level1" id="li1">商品管理</a>
+						
+						<ul>
+							<li><a href="allFileList.html" target="iframe"><div class="li_div"></div><div class="li_div_line"></div>所有文件</a></li>
+							<li><a href="buleFile.html" target="iframe"><div class="li_div"></div><div class="li_div_line"></div>蓝桥杯文件</a></li>
+							<li><a href="cpcFile.html" target="iframe"><div class="li_div"></div><div class="li_div_line"></div>计赛文件</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="sider_list_span2"></span>
+						<i class="fa fa-cogs" aria-hidden="true" id="left_i"></i>
+						<i class="fa fa-angle-down" aria-hidden="true" id="right_i"></i>
+						<a href="#" class="level1" id="li2">留言管理</a>
+						<ul>
+							<li><a href="Guestbook.html" target="iframe"><div class="li_div"></div><div class="li_div_line"></div>留言管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="sider_list_span3" ></span>
+						<i class="fa fa-user" aria-hidden="true" id="left_i"></i>
+						<i class="fa fa-angle-down" aria-hidden="true" id="right_i"></i>
+						<a href="#" class="level1" id="li3">用户管理</a>
+						<ul>
+							<li><a href="userInfo.html" target="iframe"><div class="li_div"></div><div class="li_div_line"></div>个人信息</a></li>
+							<li><a href="orderDetail.html" target="iframe"><div class="li_div"></div><div class="li_div_line"></div>订单详情</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="sider_list_span4"></span>
+						<i class="fa fa-angle-down" aria-hidden="true" id="right_i"></i>
+						<i class="fa fa-random" aria-hidden="true" id="left_i"></i>
+						<a href="#" class="level1" id="li4">系统管理</a>
+						<ul>
+							<li><a href="system-log.html" target="iframe"><div class="li_div"></div><div class="li_div_line"></div>系统日志</a></li>
+						</ul>
+					</li>
+					<!--<li>
+						<span class="sider_list_span5"></span>
+						<i class="fa fa-angle-down" aria-hidden="true" id="right_i"></i>
+						<i class="fa fa-paw" aria-hidden="true" id="left_i"></i>
+						<a href="#" class="level1" id="li5">商品分类</a>
+						<ul>
+							<li><a href="#"><div class="li_div"></div><div class="li_div_line"></div>系统管理</a></li>
+							<li><a href="#"><div class="li_div"></div><div class="li_div_line"></div>系统设置</a></li>
+							<li><a href="#"><div class="li_div"></div><div class="li_div_line"></div>栏目管理</a></li>
+							<li><a href="#"><div class="li_div"></div><div class="li_div_line"></div>系统日志</a></li>
+						</ul>
+					</li>-->
+					
+				</ul>
+				
+				
+				
+			</div>
+			
+			
+			<!--右侧div实现-->
+			<div class="right">
+				<div class="div_lineline"></div>
+				<div class="right_header">
+					<div class="right_header_info clearfix">
+						<i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<a href="allFileList.html" class="right_header_a" target="iframe">首页</a>	<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</div>
+									
+				</div>
+				<div class="" style="height: 625px;">
+					<iframe  id="iframe" style="border:0; width:100%;height: 100%; " name="iframe" frameborder="0" src="allFileList.html"></iframe>
+				</div>
+				
+			
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		$(function(){
+			/*
+				// 获取div的样式
+				$("div").css("width");
+				$("div").css("color");
+
+
+				//设置div的样式
+				$("div").css("width","30px");
+				$("div").css("height","30px");
+				$("div").css({fontSize:"30px",color:"red"});
+			*/
+
+			$('.level1').click(function() {
+				// slideDown() 向下展开		slideUp() 向上卷起
+				console.log("..."+$(this).next().css('display'));
+				var status=$(this).next().css('display');
+				if(status=='block')
+					$(this).next().slideUp();
+				else 
+					$(this).next().slideDown().parent().siblings().children('ul').slideUp();
+
+			});
+		});
+
+	</script>
+		
+		
+		
+		<script type="text/javascript">
+			$(function(){
+				$('#li1').mouseover(function(){
+//					$("div").css({fontSize:"30px",color:"red"});
+					$(this).css({backgroundColor:"#fff",color:"rgb(25,99,170)"});
+					$('.sider_list_span1').css({backgroundColor:"#62A8D1"});//
+				});
+				$('#li1').mouseout(function(){
+					$(this).css({backgroundColor:"#F5F5F5",color:"#666"});
+					$('.sider_list_span1').css({backgroundColor:"#F5F5F5"});
+				});
+				$('#li2').mouseover(function(){
+					$(this).css({backgroundColor:"#fff",color:"rgb(25,99,170)"});
+					$('.sider_list_span2').css({backgroundColor:"#62A8D1"});//
+				});
+				$('#li2').mouseout(function(){
+					$(this).css({backgroundColor:"#F5F5F5",color:"#666"});
+					$('.sider_list_span2').css({backgroundColor:"#F5F5F5"});
+				});
+				$('#li3').mouseover(function(){
+					$(this).css({backgroundColor:"#fff",color:"rgb(25,99,170)"});
+//					$("div").css({fontSize:"30px",color:"red"});
+					$('.sider_list_span3').css({backgroundColor:"#62A8D1"});//
+				});
+				$('#li3').mouseout(function(){
+					$(this).css({backgroundColor:"#F5F5F5",color:"#666"});
+					$('.sider_list_span3').css({backgroundColor:"#F5F5F5"});
+				});
+				$('#li4').mouseover(function(){
+					$(this).css({backgroundColor:"#fff",color:"rgb(25,99,170)"});
+					$('.sider_list_span4').css({backgroundColor:"#62A8D1"});//
+				});
+				$('#li4').mouseout(function(){
+					$(this).css({backgroundColor:"#F5F5F5",color:"#666"});
+					$('.sider_list_span4').css({backgroundColor:"#F5F5F5"});
+				});
+				$('#li5').mouseover(function(){
+					$(this).css({backgroundColor:"#fff",color:"rgb(25,99,170)"});
+					$('.sider_list_span5').css({backgroundColor:"#62A8D1"});//
+				});
+				$('#li5').mouseout(function(){
+					$(this).css({backgroundColor:"#F5F5F5",color:"#666"});
+					$('.sider_list_span5').css({backgroundColor:"#F5F5F5"});
+				});
+				
+				$('#sider_header').click(function(){
+//					alert(11);
+					$('.sider_header_icon').css({display:"block"});
+				});
+				
+			})
+		</script>
+		
+		<script type="text/javascript">
+			$(function(){
+				
+				$('.comment').bind('click',function(){
+
+				});
+				
+				$('.header_nav_inform').bind('click',function(){
+					var display = $('.bell_div').css('display');
+					
+					x = $(this).offset();
+					
+					left = x.left+50-240+'px';
+					
+					$('.bell_div').css({marginTop:x.top+50+'px',marginLeft:left})
+					
+					if(display == 'block'){
+						$('.bell_div').css({display:'none'});
+					}
+					if(display == 'none'){
+						$('.bell_div').css({display:'block'});
+					}
+					
+				});
+				$('.sider_icon').bind('click',function(){
+					$('.bell_div').css({display:"none"})
+				});
+				
+				$('.header_nav_welcome').bind('click',function(){
+					var display = $('.bell_login').css('display');
+					
+					x = $(this).offset();
+					
+					left = x.left+50-120+'px';
+					
+					$('.bell_login').css({marginTop:x.top+50+'px',marginLeft:left})
+					
+					if(display == 'block'){
+						$('.bell_login').css({display:'none'});
+					}
+					if(display == 'none'){
+						$('.bell_login').css({display:'block'});
+					}
+					
+				});
+				
+			})
+			
+		</script>
+	</body>
+</html>
